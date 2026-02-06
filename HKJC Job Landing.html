@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Manager - Software Engineering CoE | Hong Kong Jockey Club</title>
+    <style>
+        :root {
+            --color-primary: #2c5f2d;
+            --color-primary-dark: #1a3a1b;
+            --color-accent: #97c93d;
+            --color-bg: #ffffff;
+            --color-surface: #f8f9fa;
+            --color-text: #1a1a1a;
+            --color-text-light: #666666;
+            --color-border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero .company {
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: var(--color-surface);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h2 {
+            font-size: 1.875rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--color-accent);
+        }
+
+        .section h3 {
+            font-size: 1.375rem;
+            color: var(--color-primary-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.875rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .section li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: white;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 10px;
+            border: 1px solid var(--color-border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .cta {
+            background: var(--color-primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 1rem 3rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(151, 201, 61, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+            padding: 0.375rem 0.875rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: var(--color-primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Executive Manager</h1>
+        <div class="subtitle">Software Engineering Centre of Excellence</div>
+        <div class="company">Hong Kong Jockey Club</div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>About the Role</h2>
+            <p>The Executive Manager, Software Engineering Centre of Excellence will be responsible for the management of the agile delivery process &amp; quality of the Club's Middleware Platforms, CI/CD Pipelines and Test Automation teams.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Reporting to:</strong> Chief Technology Officer</p>
+                <p><strong>Location:</strong> Hong Kong / Shenzhen Technology Centre</p>
+            </div>
+
+            <p>The Executive Manager will provide technical leadership for the continued maintenance and modernisation of the Middleware and Automation landscape of our Engineering teams. This role is responsible for code quality management &amp; automation testing, development governance, and continuous delivery platform and processes, and their consistent use across all development teams.</p>
+
+            <p>The Executive Manager engages as a technical expert point between other engineering teams ensuring smooth project and programme execution in support of the IT change function against timelines and budget.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Responsibilities</h2>
+            
+            <h3>Development Governance</h3>
+            <ul>
+                <li>Defines, deploys, maintains and ensures common coding standards and good coding practices</li>
+                <li>Implements the department's standard SDLC and best practices</li>
+                <li>Leads the adoption of DevSecOps and SRE within own department</li>
+                <li>Supports automated validation of code quality and sets appropriate KPIs</li>
+            </ul>
+
+            <h3>Quality &amp; Test Management</h3>
+            <ul>
+                <li>Leads the Automation testing Strategy across functions</li>
+                <li>Ensures adequate human and testing resources are deployed effectively</li>
+                <li>Manages all aspects of automation testing including planning, execution and defect management</li>
+            </ul>
+
+            <h3>Agile Delivery</h3>
+            <ul>
+                <li>Owns the agile delivery process within the department</li>
+                <li>Ensures consistent and standardised implementation of Agile/Scrum</li>
+                <li>Continuously improves alignment with world class agile delivery methodologies</li>
+                <li>Achieves highly predictable, high quality, and efficient deliveries</li>
+            </ul>
+
+            <h3>Continuous Delivery</h3>
+            <ul>
+                <li>Leads adoption and continuous improvement of delivery methods and service level standards</li>
+                <li>Manages development process, highly automated delivery pipeline, and pre-production environments</li>
+                <li>Designs and applies high levels of automation across development teams</li>
+                <li>Implements change and release management strategy supporting CI/CT/CD</li>
+            </ul>
+
+            <h3>Engineering Excellence</h3>
+            <ul>
+                <li>Oversees the Engineering Guild to foster collaborative and innovative community</li>
+                <li>Develops and oversees comprehensive roadmap to implement continuous improvement initiatives</li>
+                <li>Fosters innovation-driven culture and promotes continuous improvement</li>
+                <li>Optimises engineering tooling &amp; automation to enhance productivity</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Qualifications &amp; Experience</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>Education</h4>
+                    <p>University Degree in Computer Science, Computer Engineering, Electrical Engineering or equivalent. MBA degree is a plus.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Experience</h4>
+                    <p>15+ years of expertise in technology development with at least 8 years of management experience in a highly automated and scaled Agile IT development environment.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Leadership</h4>
+                    <p>8 years in people management and senior technical leadership positions. Proven track record in building and leading high performing technical delivery teams.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Domain Knowledge</h4>
+                    <p>10 years of working experience in backend transaction and information systems in either Horse Racing pari-mutuel systems, Totes, and/or Sportsbook fixed odds systems (i-gaming).</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Management Experience Required</h3>
+            <ul>
+                <li>Scale at least 5 concurrent agile teams</li>
+                <li>DevOps/CICD/Env teams management</li>
+                <li>QA/Devtest/Automation teams leadership</li>
+                <li>Programme management experience in complex, large scale systems</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <span class="badge">Agile at Scale</span>
+                <span class="badge">DevOps</span>
+                <span class="badge">CI/CT/CD</span>
+                <span class="badge">SRE</span>
+                <span class="badge">DevSecOps</span>
+                <span class="badge">Microservices</span>
+                <span class="badge">Event-Driven Architecture</span>
+                <span class="badge">Message-Oriented Middleware</span>
+                <span class="badge">High Transaction Systems</span>
+                <span class="badge">Low Latency Systems</span>
+                <span class="badge">Enterprise Architecture</span>
+                <span class="badge">Cloud Hosted Applications</span>
+            </div>
+
+            <ul>
+                <li>Strong background in technical software engineering and modern delivery techniques</li>
+                <li>Minimum 10 years of working experience on high transaction low latency systems</li>
+                <li>Deep familiarity of event driven micro service architectures using message-oriented middleware</li>
+                <li>Broad technical knowledge covering the Application Development life cycle</li>
+                <li>Knowledge of service management principles including SLAs and incident management</li>
+                <li>Experience with Enterprise Architecture frameworks is a strong plus</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Key Success Factors</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>Technical Leadership</h4>
+                    <p>Strong technical leadership for the delivery of Strategic and BAU Operational Initiatives involving Middleware and Automation landscape.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Stakeholder Management</h4>
+                    <p>Strong ability in managing stakeholder expectations, business awareness and relationship management within and outside the Division.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Communication</h4>
+                    <p>Excellent verbal and written communication skills to confidently articulate IT related risks, issues, options and opportunities to senior management.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Innovation &amp; Change</h4>
+                    <p>Sound business and planning capabilities with innovative mind-set and strong change management capabilities.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>People Management</h4>
+                    <p>Good people management, interpersonal skills and resource planning capabilities. Ability to create diverse and inclusive culture.</p>
+                </div>
+                
+                <div class="card">
+                    <h4>System Reliability</h4>
+                    <p>Direct resources to attain zero major system outage during prime business hours against defined availability targets of core betting systems.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Ready to Lead Engineering Excellence?</h2>
+            <p>Join Hong Kong Jockey Club and shape the future of our technology landscape</p>
+            <a href="https://careers.hkjc.com" class="cta-button">Apply Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Hong Kong Jockey Club. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">This is an unofficial job description landing page</p>
+    </footer>
+</body>
+</html>
+
